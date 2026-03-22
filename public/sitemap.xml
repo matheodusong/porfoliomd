@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://matheodusong.github.io/matheodusong-portfolio/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/alumine</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/rpr</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/mille-foil</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/zephyr</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/peony</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matheodusong.github.io/matheodusong-portfolio/info</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matheodusong.github.io/matheodusong-portfolio/contact</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>

@@ -1,50 +1,20 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import PortfolioHeader from "@/components/PortfolioHeader";
 import ProjectStrip from "@/components/ProjectStrip";
-import ProjectDetail, { type ProjectData } from "@/components/ProjectDetail";
+import ProjectDetail from "@/components/ProjectDetail";
 import InfoOverlay from "@/components/InfoOverlay";
 import InquiriesOverlay from "@/components/InquiriesOverlay";
-
-const projects = [
-  {
-    title: "Alumine",
-    subtitle: "Technical Study",
-    mainImg: "https://images.unsplash.com/photo-1544244015-0cd4b3ff569d?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1459156212016-c812468e2115?q=80&w=2000",
-  },
-  {
-    title: "RPR",
-    subtitle: "CNC Fabrication",
-    mainImg: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1508183393781-bc994c92bec1?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=2000",
-  },
-  {
-    title: "Mille-foil",
-    subtitle: "Structure Design",
-    mainImg: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1614165933393-0ec2a5940935?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1526170315870-ef6d82f583ad?q=80&w=2000",
-  },
-  {
-    title: "Zéphyr",
-    subtitle: "Aerodynamic Study",
-    mainImg: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=2000",
-  },
-  {
-    title: "Peony",
-    subtitle: "Organic Form",
-    mainImg: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000",
-  },
-];
+import SEOHead from "@/components/SEOHead";
+import JsonLd from "@/components/JsonLd";
+import { projects, getProjectBySlug, type ProjectData } from "@/data/projects";
 
 const Index = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { slug } = useParams<{ slug: string }>();
+
   const [activeProject, setActiveProject] = useState<ProjectData | null>(null);
   const [showDetail, setShowDetail] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -52,30 +22,55 @@ const Index = () => {
 
   const hasOverlay = showDetail || showInfo || showInquiries;
 
-  const closeAll = useCallback(() => {
-    setShowDetail(false);
-    setShowInfo(false);
-    setShowInquiries(false);
-  }, []);
+  // Sync route → overlay state
+  useEffect(() => {
+    if (slug) {
+      const project = getProjectBySlug(slug);
+      if (project) {
+        setActiveProject(project);
+        setShowDetail(true);
+        setShowInfo(false);
+        setShowInquiries(false);
+      }
+    } else if (location.pathname === "/info") {
+      setShowInfo(true);
+      setShowDetail(false);
+      setShowInquiries(false);
+    } else if (location.pathname === "/contact") {
+      setShowInquiries(true);
+      setShowDetail(false);
+      setShowInfo(false);
+    } else if (location.pathname === "/") {
+      setShowDetail(false);
+      setShowInfo(false);
+      setShowInquiries(false);
+    }
+  }, [slug, location.pathname]);
 
-  const openProject = useCallback((project: ProjectData) => {
-    closeAll();
-    setActiveProject(project);
-    setShowDetail(true);
-  }, [closeAll]);
+  const closeAll = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
+  const openProject = useCallback(
+    (project: ProjectData) => {
+      navigate(`/project/${project.slug}`);
+    },
+    [navigate]
+  );
 
   const openInfo = useCallback(() => {
-    closeAll();
-    setShowInfo(true);
-  }, [closeAll]);
+    navigate("/info");
+  }, [navigate]);
 
   const openInquiries = useCallback(() => {
-    closeAll();
-    setShowInquiries(true);
-  }, [closeAll]);
+    navigate("/contact");
+  }, [navigate]);
 
   return (
-    <div className="h-screen w-screen overflow-hidden">
+    <main className="h-screen w-screen overflow-hidden">
+      <SEOHead />
+      <JsonLd />
+
       <PortfolioHeader
         onOpenInfo={openInfo}
         onOpenInquiries={openInquiries}
@@ -90,10 +85,12 @@ const Index = () => {
           opacity: hasOverlay ? 0 : 1,
         }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        role="list"
+        aria-label="Design projects"
       >
         {projects.map((project, i) => (
           <ProjectStrip
-            key={project.title}
+            key={project.slug}
             index={i}
             title={project.title}
             image={project.mainImg}
@@ -106,11 +103,11 @@ const Index = () => {
       <ProjectDetail
         project={activeProject}
         isOpen={showDetail}
-        onClose={() => setShowDetail(false)}
+        onClose={closeAll}
       />
-      <InfoOverlay isOpen={showInfo} onClose={() => setShowInfo(false)} />
-      <InquiriesOverlay isOpen={showInquiries} onClose={() => setShowInquiries(false)} />
-    </div>
+      <InfoOverlay isOpen={showInfo} onClose={closeAll} />
+      <InquiriesOverlay isOpen={showInquiries} onClose={closeAll} />
+    </main>
   );
 };
 
