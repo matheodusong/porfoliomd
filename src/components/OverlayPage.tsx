@@ -39,9 +39,9 @@ const OverlayPage = ({ isOpen, onClose, children }: OverlayPageProps) => {
           onScroll={handleScroll}
         >
           {children}
-          <div className="h-[40vh] flex flex-col items-center justify-start pt-[10vh]">
+          <div className="h-[80vh] flex flex-col items-center justify-start pt-[15vh]">
             <p className="spec-label opacity-30 tracking-[0.5em]">Scroll to close</p>
-            <div className="h-24 w-px bg-border mt-6" />
+            <div className="h-32 w-px bg-border mt-6" />
           </div>
         </motion.div>
       )}
