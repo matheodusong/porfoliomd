@@ -8,7 +8,7 @@ import InfoOverlay from "@/components/InfoOverlay";
 import InquiriesOverlay from "@/components/InquiriesOverlay";
 import SEOHead from "@/components/SEOHead";
 import JsonLd from "@/components/JsonLd";
-import { projects, getProjectBySlug, type ProjectData } from "@/data/projects";
+import { projects, getProjectBySlug, getProjectImage, type ProjectData } from "@/data/projects";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -93,7 +93,7 @@ const Index = () => {
             key={project.slug}
             index={i}
             title={project.title}
-            image={project.mainImg}
+            image={getProjectImage(project.imageFolder, 1)}
             onClick={() => openProject(project)}
           />
         ))}

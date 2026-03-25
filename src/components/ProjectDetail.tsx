@@ -1,5 +1,6 @@
 import OverlayPage from "./OverlayPage";
 import SEOHead from "./SEOHead";
+import { getProjectImage } from "@/data/projects";
 import type { ProjectData } from "@/data/projects";
 
 interface ProjectDetailProps {
@@ -11,6 +12,10 @@ interface ProjectDetailProps {
 const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
   if (!project) return null;
 
+  const mainImg = getProjectImage(project.imageFolder, 1);
+  const secImg1 = getProjectImage(project.imageFolder, 2);
+  const secImg2 = getProjectImage(project.imageFolder, 3);
+
   return (
     <OverlayPage isOpen={isOpen} onClose={onClose}>
       <SEOHead
@@ -18,16 +23,17 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
         description={project.description}
         path={`/project/${project.slug}`}
         type="article"
-        image={project.mainImg}
+        image={mainImg}
       />
       <article className="max-w-[90vw] mx-auto pt-24 md:pt-32 px-4">
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Main Image */}
           <figure className="lg:col-span-9">
             <img
-              src={project.mainImg}
+              src={mainImg}
               alt={`${project.title} — ${project.subtitle} by Matheo Dusong`}
               className="w-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 aspect-[4/5] lg:aspect-video"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 75vw, 60vw"
             />
           </figure>
 
@@ -55,16 +61,18 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
           <div className="lg:col-span-9 space-y-10 lg:space-y-20">
             <figure>
               <img
-                src={project.secImg1}
+                src={secImg1}
                 alt={`${project.title} detail view 1`}
                 className="w-full opacity-80 lg:opacity-60 hover:opacity-100 transition-opacity duration-700"
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 75vw, 60vw"
               />
             </figure>
             <figure>
               <img
-                src={project.secImg2}
+                src={secImg2}
                 alt={`${project.title} detail view 2`}
                 className="w-full opacity-80 lg:opacity-60 hover:opacity-100 transition-opacity duration-700"
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 75vw, 60vw"
               />
             </figure>
           </div>
