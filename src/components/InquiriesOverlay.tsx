@@ -18,7 +18,7 @@ const InquiriesOverlay = ({ isOpen, onClose }: InquiriesOverlayProps) => {
         <p className="spec-label mb-4">Contact</p>
         <h1 className="text-3xl md:text-4xl lg:text-6xl font-light tracking-tighter mb-20 text-foreground">
           <a
-            href="mailto:hello@matheodusong.com"
+            href="mailto:dusong.matheo@gmail.com"
             className="hover:text-muted-foreground transition-colors duration-300"
           >
             hello@matheodusong.com
