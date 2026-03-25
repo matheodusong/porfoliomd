@@ -11,7 +11,7 @@ const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
     <OverlayPage isOpen={isOpen} onClose={onClose}>
       <SEOHead
         title="About"
-        description="Matheo Dusong is an industrial designer focusing on technical precision, material research, and refined aesthetics."
+        description="Matheo Dusong is a Swiss based industrial designer studying at Ecal"
         path="/info"
       />
       <section className="max-w-4xl mx-auto pt-36 md:pt-48 px-6 md:px-10">
