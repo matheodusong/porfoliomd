@@ -33,7 +33,7 @@ const JsonLd = () => {
       name: p.title,
       description: p.description,
       url: `${SITE_URL}/project/${p.slug}`,
-      image: p.mainImg,
+      image: `${SITE_URL}/images/${p.imageFolder}/image-1.jpg`,
       creator: { "@type": "Person", name: "Matheo Dusong" },
     })),
   };
