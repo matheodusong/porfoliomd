@@ -3,7 +3,7 @@ export interface ProjectData {
   title: string;
   subtitle: string;
   description: string;
-  description: string;
+  objective?: string;
   materiality: string;
   /** Folder name under /images/ — images inside must be named image-1.jpg, image-2.jpg, image-3.jpg */
   imageFolder: string;
@@ -19,8 +19,6 @@ export const projects: ProjectData[] = [
     title: "Alumine",
     subtitle: "Mechanical pencils",
     description:
-      "A collection of mechanical pencils that share the same base pattern, but their thickness evolves in relation to the lead's diameter. ",
-    description:
       "A collection of mechanical pencils that share the same base pattern, but their thickness evolves in relation to the lead's diameter.",
     materiality: "3D printed Aluminium.",
     imageFolder: "alumine",
@@ -29,8 +27,6 @@ export const projects: ProjectData[] = [
     slug: "rpr",
     title: "RPR",
     subtitle: "CNC Fabrication",
-    description:
-      "Precision CNC-fabricated components designed for seamless assembly, balancing industrial efficiency with refined surface finish.",
     description:
       "RPR is a M.2 based ssd which can be opened by its user to change the storage capacity when full.",
     materiality: "3D printed Aluminium and TPU",
