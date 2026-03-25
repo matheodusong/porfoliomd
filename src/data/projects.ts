@@ -5,10 +5,13 @@ export interface ProjectData {
   description: string;
   objective: string;
   materiality: string;
-  mainImg: string;
-  secImg1: string;
-  secImg2: string;
+  /** Folder name under /images/ — images inside must be named image-1.jpg, image-2.jpg, image-3.jpg */
+  imageFolder: string;
 }
+
+/** Helper: returns the path for a project image by index (1-based). */
+export const getProjectImage = (folder: string, index: number) =>
+  `/images/${folder}/image-${index}.jpg`;
 
 export const projects: ProjectData[] = [
   {
@@ -20,9 +23,7 @@ export const projects: ProjectData[] = [
     objective:
       "Investigation into tactile relationships between raw materials and functional performance in high-stress environments.",
     materiality: "Anodized Aluminum, Borosilicate Glass, Machined Carbon Fiber.",
-    mainImg: "https://images.unsplash.com/photo-1544244015-0cd4b3ff569d?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1459156212016-c812468e2115?q=80&w=2000",
+    imageFolder: "alumine",
   },
   {
     slug: "rpr",
@@ -33,9 +34,7 @@ export const projects: ProjectData[] = [
     objective:
       "Development of a modular system optimized for CNC manufacturing, reducing material waste while maintaining structural integrity.",
     materiality: "Machined Steel, Acetal Copolymer, Vapor-Blasted Titanium.",
-    mainImg: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1508183393781-bc994c92bec1?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=2000",
+    imageFolder: "rpr",
   },
   {
     slug: "mille-foil",
@@ -46,9 +45,7 @@ export const projects: ProjectData[] = [
     objective:
       "Exploration of multi-layered construction techniques to achieve maximum strength with minimal material volume.",
     materiality: "Laser-Cut Stainless Steel, Laminated Birch Plywood, Pressed Felt.",
-    mainImg: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1614165933393-0ec2a5940935?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1526170315870-ef6d82f583ad?q=80&w=2000",
+    imageFolder: "mille-foil",
   },
   {
     slug: "zephyr",
@@ -59,9 +56,7 @@ export const projects: ProjectData[] = [
     objective:
       "CFD-driven form development targeting drag reduction and thermal dissipation in compact product enclosures.",
     materiality: "Rotational-Molded HDPE, Wind-Tunnel Tested ABS, Brushed Copper Accents.",
-    mainImg: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=2000",
+    imageFolder: "zephyr",
   },
   {
     slug: "peony",
@@ -72,9 +67,7 @@ export const projects: ProjectData[] = [
     objective:
       "Translating biological morphogenesis into injection-moldable geometries without sacrificing organic character.",
     materiality: "Bio-Based PLA, Hand-Finished Ceramic, Oxidized Bronze.",
-    mainImg: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2000",
-    secImg1: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000",
-    secImg2: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000",
+    imageFolder: "peony",
   },
 ];
 
