@@ -3,7 +3,7 @@ export interface ProjectData {
   title: string;
   subtitle: string;
   description: string;
-  objective: string;
+  description: string;
   materiality: string;
   /** Folder name under /images/ — images inside must be named image-1.jpg, image-2.jpg, image-3.jpg */
   imageFolder: string;
@@ -17,12 +17,12 @@ export const projects: ProjectData[] = [
   {
     slug: "alumine",
     title: "Alumine",
-    subtitle: "Technical Study",
+    subtitle: "Mechanical pencils",
     description:
-      "An in-depth technical study exploring the structural and aesthetic properties of anodized aluminum in high-performance product applications.",
-    objective:
-      "Investigation into tactile relationships between raw materials and functional performance in high-stress environments.",
-    materiality: "Anodized Aluminum, Borosilicate Glass, Machined Carbon Fiber.",
+      "A collection of mechanical pencils that share the same base pattern, but their thickness evolves in relation to the lead's diameter. ",
+    description:
+      "A collection of mechanical pencils that share the same base pattern, but their thickness evolves in relation to the lead's diameter.",
+    materiality: "3D printed Aluminium.",
     imageFolder: "alumine",
   },
   {
@@ -31,9 +31,9 @@ export const projects: ProjectData[] = [
     subtitle: "CNC Fabrication",
     description:
       "Precision CNC-fabricated components designed for seamless assembly, balancing industrial efficiency with refined surface finish.",
-    objective:
-      "Development of a modular system optimized for CNC manufacturing, reducing material waste while maintaining structural integrity.",
-    materiality: "Machined Steel, Acetal Copolymer, Vapor-Blasted Titanium.",
+    description:
+      "RPR is a M.2 based ssd which can be opened by its user to change the storage capacity when full.",
+    materiality: "3D printed Aluminium and TPU",
     imageFolder: "rpr",
   },
   {
