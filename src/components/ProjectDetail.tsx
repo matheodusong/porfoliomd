@@ -32,7 +32,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
             <img
               src={mainImg}
               alt={`${project.title} — ${project.subtitle} by Matheo Dusong`}
-              className="w-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 aspect-[4/5] lg:aspect-video"
+              className="w-full object-contain transition-all duration-1000"
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 75vw, 60vw"
             />
           </figure>
@@ -58,21 +58,21 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
           </aside>
 
           {/* Extra Images */}
-          <div className="lg:col-span-9 space-y-10 lg:space-y-20">
+          <div className="lg:col-span-7 space-y-8 lg:space-y-14">
             <figure>
               <img
                 src={secImg1}
                 alt={`${project.title} detail view 1`}
-                className="w-full opacity-80 lg:opacity-60 hover:opacity-100 transition-opacity duration-700"
-                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 75vw, 60vw"
+                className="w-full transition-opacity duration-700"
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 60vw, 50vw"
               />
             </figure>
             <figure>
               <img
                 src={secImg2}
                 alt={`${project.title} detail view 2`}
-                className="w-full opacity-80 lg:opacity-60 hover:opacity-100 transition-opacity duration-700"
-                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 75vw, 60vw"
+                className="w-full transition-opacity duration-700"
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 60vw, 50vw"
               />
             </figure>
           </div>
