@@ -17,7 +17,7 @@ const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
       <section className="max-w-4xl mx-auto pt-36 md:pt-48 px-6 md:px-10">
         <p className="spec-label mb-4">Profile</p>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter mb-12 text-foreground leading-tight">
-          Matheo Dusong is a designer focusing on technical precision and industrial aesthetics.
+         Matheo Dusong is a Swiss based industrial designer studying at Ecal
         </h1>
       </section>
     </OverlayPage>
