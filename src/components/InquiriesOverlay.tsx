@@ -21,7 +21,7 @@ const InquiriesOverlay = ({ isOpen, onClose }: InquiriesOverlayProps) => {
             href="mailto:dusong.matheo@gmail.com"
             className="hover:text-muted-foreground transition-colors duration-300"
           >
-            hello@matheodusong.com
+            matheo.dusong@gmail.com
           </a>
         </h1>
       </section>
