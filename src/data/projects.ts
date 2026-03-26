@@ -37,10 +37,10 @@ export const projects: ProjectData[] = [
     title: "Mille-foil",
     subtitle: "Structure Design",
     description:
-      "A layered structural design inspired by natural lamination patterns, translating organic complexity into manufacturable form.",
+      "Designed to suit a wide range of users, Mille-foil addresses this issue with its modular volume system. A single board is all you need, where several would normally be required. It's suitable for both beginners and experienced riders, adapting to each individual's progress. Easy to transport and quick to assemble, just a few screws are all you need to be ready to sail.",
     objective:
       "Exploration of multi-layered construction techniques to achieve maximum strength with minimal material volume.",
-    materiality: "Laser-Cut Stainless Steel, Laminated Birch Plywood, Pressed Felt.",
+    materiality: "Carbon and fiber glass.",
     imageFolder: "mille-foil",
   },
   {
@@ -48,10 +48,10 @@ export const projects: ProjectData[] = [
     title: "Zéphyr",
     subtitle: "Aerodynamic Study",
     description:
-      "An aerodynamic study translating airflow simulation data into physical form, where performance dictates geometry.",
+      " Zéphyr is a fan. The stainless steel structure unfolds smoothly and creates a light breeze with a simple motion. Whether you’re on the move or just need a quick way to cool down, Zéphyr is a good companion for warm days.",
     objective:
       "CFD-driven form development targeting drag reduction and thermal dissipation in compact product enclosures.",
-    materiality: "Rotational-Molded HDPE, Wind-Tunnel Tested ABS, Brushed Copper Accents.",
+    materiality: "Stainless steel and PVC-coated ripstop.",
     imageFolder: "zephyr",
   },
   {
@@ -59,10 +59,10 @@ export const projects: ProjectData[] = [
     title: "Peony",
     subtitle: "Organic Form",
     description:
-      "An organic form study drawing from botanical growth patterns to create objects that feel alive yet precisely engineered.",
+      "A glasse soliflower vase made specially for peonies. Created with a tool made specialy for the occasion.",
     objective:
-      "Translating biological morphogenesis into injection-moldable geometries without sacrificing organic character.",
-    materiality: "Bio-Based PLA, Hand-Finished Ceramic, Oxidized Bronze.",
+      "Creating a glass blown soliflower made durring a one week workshop.",
+    materiality: "Glass.",
     imageFolder: "peony",
   },
 ];
