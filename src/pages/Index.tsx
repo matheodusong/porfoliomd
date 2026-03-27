@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import PortfolioHeader from "@/components/PortfolioHeader";
@@ -9,6 +9,12 @@ import InquiriesOverlay from "@/components/InquiriesOverlay";
 import SEOHead from "@/components/SEOHead";
 import JsonLd from "@/components/JsonLd";
 import { projects, getProjectBySlug, getProjectImage, type ProjectData } from "@/data/projects";
+
+/** Pick `count` random items from an array (Fisher-Yates shuffle). */
+function pickRandom<T>(arr: T[], count: number): T[] {
+  const shuffled = [...arr].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+}
 
 const Index = () => {
   const navigate = useNavigate();

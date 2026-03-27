@@ -18,17 +18,19 @@ export const getProjectImage = (folder: string, index: number) =>
 export const projects: ProjectData[] = [
   {
     slug: "alumine",
+    number: 1,
     title: "Alumine",
     subtitle: "Mechanical pencils",
     description:
       "A collection of mechanical pencils that share the same base pattern, but their thickness evolves in relation to the lead's diameter.",
-        objective:
+    objective:
       "A collection of mechanical pencils that share the same base pattern, but their thickness evolves in relation to the lead's diameter.",
     materiality: "3D printed Aluminium.",
     imageFolder: "alumine",
   },
   {
     slug: "rpr",
+    number: 2,
     title: "RPR",
     subtitle: "CNC Fabrication",
     description:
@@ -40,6 +42,7 @@ export const projects: ProjectData[] = [
   },
   {
     slug: "mille-foil",
+    number: 3,
     title: "Mille-foil",
     subtitle: "Structure Design",
     description:
@@ -51,17 +54,19 @@ export const projects: ProjectData[] = [
   },
   {
     slug: "zephyr",
+    number: 4,
     title: "Zéphyr",
     subtitle: "Aerodynamic Study",
     description:
-      " Zéphyr is a fan. The stainless steel structure unfolds smoothly and creates a light breeze with a simple motion. Whether you’re on the move or just need a quick way to cool down, Zéphyr is a good companion for warm days.",
+      " Zéphyr is a fan. The stainless steel structure unfolds smoothly and creates a light breeze with a simple motion. Whether you're on the move or just need a quick way to cool down, Zéphyr is a good companion for warm days.",
     objective:
-      "Zéphyr is a fan. The stainless steel structure unfolds smoothly and creates a light breeze with a simple motion. Whether you’re on the move or just need a quick way to cool down, Zéphyr is a good companion for warm days.",
+      "Zéphyr is a fan. The stainless steel structure unfolds smoothly and creates a light breeze with a simple motion. Whether you're on the move or just need a quick way to cool down, Zéphyr is a good companion for warm days.",
     materiality: "Stainless steel and PVC-coated ripstop.",
     imageFolder: "zephyr",
   },
   {
     slug: "peony",
+    number: 5,
     title: "Peony",
     subtitle: "Organic Form",
     description:
@@ -70,6 +75,33 @@ export const projects: ProjectData[] = [
       "A glasse soliflower vase made specially for peonies. Created with a tool made specially for the occasion.",
     materiality: "Glass.",
     imageFolder: "peony",
+  },
+  {
+    slug: "project-6",
+    number: 6,
+    title: "Project 6",
+    subtitle: "Coming Soon",
+    description: "Details coming soon.",
+    materiality: "TBD",
+    imageFolder: "project-6",
+  },
+  {
+    slug: "project-7",
+    number: 7,
+    title: "Project 7",
+    subtitle: "Coming Soon",
+    description: "Details coming soon.",
+    materiality: "TBD",
+    imageFolder: "project-7",
+  },
+  {
+    slug: "project-8",
+    number: 8,
+    title: "Project 8",
+    subtitle: "Coming Soon",
+    description: "Details coming soon.",
+    materiality: "TBD",
+    imageFolder: "project-8",
   },
 ];
 
