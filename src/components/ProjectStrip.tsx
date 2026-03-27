@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 interface ProjectStripProps {
-  index: number;
+  number: number;
   title: string;
   image: string;
   onClick: () => void;
 }
 
-const ProjectStrip = ({ index, title, image, onClick }: ProjectStripProps) => {
+const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const num = String(index + 1).padStart(2, "0");
+  const num = String(number).padStart(2, "0");
 
   return (
     <div

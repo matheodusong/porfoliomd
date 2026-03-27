@@ -1,11 +1,13 @@
 export interface ProjectData {
   slug: string;
+  /** Fixed display number (01, 02, etc.) */
+  number: number;
   title: string;
   subtitle: string;
   description: string;
   objective?: string;
   materiality: string;
-  /** Folder name under /images/ — images inside must be named image-1.jpg, image-2.jpg, image-3.jpg */
+  /** Folder name under /images/ — images inside must be named image-1.jpeg, image-2.jpeg, image-3.jpeg */
   imageFolder: string;
 }
 
