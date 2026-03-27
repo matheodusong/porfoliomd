@@ -101,7 +101,7 @@ export const projects: ProjectData[] = [
     subtitle: "Series of images made with CGI for JB.",
     description: "Series of images made with CGI for JB.",
     materiality: "CGI",
-    imageFolder: "project-8",
+    imageFolder: "JB",
   },
 ];
 
