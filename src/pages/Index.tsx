@@ -25,6 +25,9 @@ const Index = () => {
   const [showDetail, setShowDetail] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showInquiries, setShowInquiries] = useState(false);
+  const [displayedProjects, setDisplayedProjects] = useState<ProjectData[]>(() =>
+    pickRandom(projects, 5)
+  );
 
   const hasOverlay = showDetail || showInfo || showInquiries;
 
@@ -54,6 +57,7 @@ const Index = () => {
   }, [slug, location.pathname]);
 
   const closeAll = useCallback(() => {
+    setDisplayedProjects(pickRandom(projects, 5));
     navigate("/");
   }, [navigate]);
 
@@ -94,10 +98,10 @@ const Index = () => {
         role="list"
         aria-label="Design projects"
       >
-        {projects.map((project, i) => (
+        {displayedProjects.map((project) => (
           <ProjectStrip
             key={project.slug}
-            index={i}
+            number={project.number}
             title={project.title}
             image={getProjectImage(project.imageFolder, 1)}
             onClick={() => openProject(project)}
