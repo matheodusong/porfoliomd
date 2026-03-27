@@ -34,7 +34,7 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
         }}
         loading="lazy"
       />
-      <div className="absolute bottom-4 left-4 lg:bottom-10 lg:left-5 z-10 spec-label opacity-50 whitespace-nowrap lg:[writing-mode:vertical-lr] lg:rotate-180">
+      <div className="absolute bottom-4 left-4 lg:bottom-10 lg:left-5 z-10 spec-label text-white opacity-80 whitespace-nowrap lg:[writing-mode:vertical-lr] lg:rotate-180">
         {num} // {title}
       </div>
     </div>
