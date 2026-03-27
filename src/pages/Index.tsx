@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import PortfolioHeader from "@/components/PortfolioHeader";
@@ -10,6 +10,12 @@ import SEOHead from "@/components/SEOHead";
 import JsonLd from "@/components/JsonLd";
 import { projects, getProjectBySlug, getProjectImage, type ProjectData } from "@/data/projects";
 
+/** Pick `count` random items from an array (Fisher-Yates shuffle). */
+function pickRandom<T>(arr: T[], count: number): T[] {
+  const shuffled = [...arr].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+}
+
 const Index = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -19,6 +25,9 @@ const Index = () => {
   const [showDetail, setShowDetail] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showInquiries, setShowInquiries] = useState(false);
+  const [displayedProjects, setDisplayedProjects] = useState<ProjectData[]>(() =>
+    pickRandom(projects, 5)
+  );
 
   const hasOverlay = showDetail || showInfo || showInquiries;
 
@@ -48,6 +57,7 @@ const Index = () => {
   }, [slug, location.pathname]);
 
   const closeAll = useCallback(() => {
+    setDisplayedProjects(pickRandom(projects, 5));
     navigate("/");
   }, [navigate]);
 
@@ -88,10 +98,10 @@ const Index = () => {
         role="list"
         aria-label="Design projects"
       >
-        {projects.map((project, i) => (
+        {displayedProjects.map((project) => (
           <ProjectStrip
             key={project.slug}
-            index={i}
+            number={project.number}
             title={project.title}
             image={getProjectImage(project.imageFolder, 1)}
             onClick={() => openProject(project)}
