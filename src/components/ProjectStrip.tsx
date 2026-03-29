@@ -26,10 +26,6 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
       {/* Vignette image — 3:4 aspect ratio, visible on hover */}
       <div
         className="absolute inset-0 flex items-center justify-center z-0"
-        style={{
-          opacity: isHovered ? 1 : 0,
-          transition: "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-        }}
       >
         <div
           style={{
