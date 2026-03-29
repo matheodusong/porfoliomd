@@ -13,28 +13,45 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
 
   return (
     <div
-      className="project-strip relative overflow-hidden cursor-pointer border-b border-foreground/10 lg:border-b-0 lg:border-r lg:border-foreground/10"
+      className="project-strip relative overflow-hidden cursor-pointer border-b border-border lg:border-b-0 lg:border-r lg:border-border flex items-center justify-center"
       style={{
         flex: isHovered ? 4 : 1,
         transition: "flex 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-        minHeight: "20vh",
+        minHeight: "14vh",
       }}
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img
-        src={image}
-        alt={title}
-        className="absolute inset-0 w-full h-full object-cover transition-all duration-[1200ms] ease-out"
+      {/* Vignette image — 3:4 aspect ratio, visible on hover */}
+      <div
+        className="absolute inset-0 flex items-center justify-center z-0"
         style={{
-          filter: isHovered ? "blur(0px)" : "blur(40px)",
-          transform: isHovered ? "scale(1)" : "scale(1.1)",
-          opacity: isHovered ? 1 : 0.4,
+          opacity: isHovered ? 1 : 0,
+          transition: "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
-        loading="lazy"
-      />
-      <div className="absolute bottom-4 left-4 lg:bottom-10 lg:left-5 z-10 spec-label text-white opacity-80 whitespace-nowrap lg:[writing-mode:vertical-lr] lg:rotate-180">
+      >
+        <div
+          style={{
+            aspectRatio: "3/4",
+            height: "85%",
+            maxWidth: "90%",
+            overflow: "hidden",
+            transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+            transform: isHovered ? "scale(1)" : "scale(0.95)",
+          }}
+        >
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      {/* Label */}
+      <div className="absolute bottom-4 left-4 lg:bottom-10 lg:left-5 z-10 spec-label text-foreground opacity-70 whitespace-nowrap lg:[writing-mode:vertical-lr] lg:rotate-180">
         {num} // {title}
       </div>
     </div>
