@@ -6,39 +6,39 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
 
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 2%;
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 70%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 30%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 88%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 0 0% 8%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 40%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 0 0% 60%;
 
     --radius: 0rem;
 
     /* Portfolio-specific tokens */
-    --surface-overlay: 0 0% 4%;
-    --label-color: 0 0% 40%;
+    --surface-overlay: 0 0% 100%;
+    --label-color: 0 0% 45%;
     --label-size: 10px;
     --label-tracking: 0.2em;
     --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
