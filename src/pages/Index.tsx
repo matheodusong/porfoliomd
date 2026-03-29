@@ -89,7 +89,7 @@ const Index = () => {
 
       {/* Grid View */}
       <motion.div
-        className="flex flex-col lg:flex-row h-screen w-screen"
+        className="flex flex-col lg:flex-row h-[70vh] lg:h-[60vh] w-screen mt-[20vh]"
         animate={{
           scale: hasOverlay ? 0.95 : 1,
           opacity: hasOverlay ? 0 : 1,
