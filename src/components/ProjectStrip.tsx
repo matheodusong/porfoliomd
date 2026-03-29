@@ -13,7 +13,7 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
 
   return (
     <div
-      className="project-strip relative overflow-hidden cursor-pointer border-r border-border flex items-center justify-center h-full"
+      className="project-strip relative overflow-hidden cursor-grab active:cursor-grabbing border-r border-border flex items-center justify-center h-full"
       style={{
         width: isHovered ? "30vw" : "15vw",
         minWidth: isHovered ? "30vw" : "15vw",
@@ -37,8 +37,9 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
             height: "85%",
             maxWidth: "90%",
             overflow: "hidden",
-            transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+            transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
             transform: isHovered ? "scale(1)" : "scale(0.95)",
+            filter: isHovered ? "blur(0px)" : "blur(6px)",
           }}
         >
           <img
