@@ -91,10 +91,20 @@
   }
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.carousel-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--foreground) / 0.3) transparent;
 }
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+.carousel-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+.carousel-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.carousel-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--foreground) / 0.3);
+  border-radius: 2px;
+}
+.carousel-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground) / 0.5);
 }
