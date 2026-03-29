@@ -93,18 +93,18 @@
 
 .carousel-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--foreground) / 0.3) transparent;
+  scrollbar-color: hsl(var(--foreground) / 0.4) hsl(var(--foreground) / 0.1);
 }
 .carousel-scrollbar::-webkit-scrollbar {
-  height: 4px;
+  height: 6px;
 }
 .carousel-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+  background: hsl(var(--foreground) / 0.1);
 }
 .carousel-scrollbar::-webkit-scrollbar-thumb {
-  background: hsl(var(--foreground) / 0.3);
-  border-radius: 2px;
+  background: hsl(var(--foreground) / 0.4);
+  border-radius: 3px;
 }
 .carousel-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--foreground) / 0.5);
+  background: hsl(var(--foreground) / 0.6);
 }
