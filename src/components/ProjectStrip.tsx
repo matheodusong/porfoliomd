@@ -46,11 +46,6 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
           />
         </div>
       </div>
-
-      {/* Label */}
-      <div className="absolute bottom-4 left-4 lg:bottom-10 lg:left-5 z-10 spec-label text-foreground opacity-70 whitespace-nowrap lg:[writing-mode:vertical-lr] lg:rotate-180">
-        {num} // {title}
-      </div>
     </div>
   );
 };
