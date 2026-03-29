@@ -13,11 +13,11 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
 
   return (
     <div
-      className="project-strip relative overflow-hidden cursor-pointer border-b border-border lg:border-b-0 lg:border-r lg:border-border flex items-center justify-center"
+      className="project-strip relative overflow-hidden cursor-pointer border-r border-border flex items-center justify-center h-full"
       style={{
-        flex: isHovered ? 4 : 1,
-        transition: "flex 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-        minHeight: "14vh",
+        width: isHovered ? "30vw" : "15vw",
+        minWidth: isHovered ? "30vw" : "15vw",
+        transition: "width 0.8s cubic-bezier(0.16, 1, 0.3, 1), min-width 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
