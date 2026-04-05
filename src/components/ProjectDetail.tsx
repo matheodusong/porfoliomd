@@ -25,20 +25,35 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
         type="article"
         image={mainImg}
       />
-      <article className="max-w-[90vw] mx-auto pt-24 md:pt-32 px-4">
-        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-16">
-          {/* Main Image */}
-          <figure className="lg:col-span-9">
-            <img
-              src={mainImg}
-              alt={`${project.title} — ${project.subtitle} by Matheo Dusong`}
-              className="w-full object-contain transition-all duration-1000"
-              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 75vw, 60vw"
-            />
-          </figure>
+      <article className="max-w-[95vw] mx-auto pt-20 md:pt-24 px-4 h-[calc(100vh-6rem)] flex flex-col">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-8 flex-1 min-h-0">
+          {/* Images - 3 columns */}
+          <div className="lg:col-span-9 flex gap-3 min-h-0 h-full">
+            <figure className="flex-1 min-w-0 flex items-center">
+              <img
+                src={mainImg}
+                alt={`${project.title} — ${project.subtitle} by Matheo Dusong`}
+                className="w-full h-full object-contain transition-all duration-1000"
+              />
+            </figure>
+            <figure className="flex-1 min-w-0 flex items-center">
+              <img
+                src={secImg1}
+                alt={`${project.title} detail view 1`}
+                className="w-full h-full object-contain transition-opacity duration-700"
+              />
+            </figure>
+            <figure className="flex-1 min-w-0 flex items-center">
+              <img
+                src={secImg2}
+                alt={`${project.title} detail view 2`}
+                className="w-full h-full object-contain transition-opacity duration-700"
+              />
+            </figure>
+          </div>
 
           {/* Sidebar */}
-          <aside className="lg:col-span-3 lg:sticky lg:top-32 self-start">
+          <aside className="lg:col-span-3 self-start">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter uppercase mb-6 leading-none text-foreground">
               {project.title}
             </h1>
@@ -56,26 +71,6 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
               </section>
             </div>
           </aside>
-
-          {/* Extra Images */}
-          <div className="lg:col-span-7 space-y-8 lg:space-y-14">
-            <figure>
-              <img
-                src={secImg1}
-                alt={`${project.title} detail view 1`}
-                className="w-full transition-opacity duration-700"
-                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 60vw, 50vw"
-              />
-            </figure>
-            <figure>
-              <img
-                src={secImg2}
-                alt={`${project.title} detail view 2`}
-                className="w-full transition-opacity duration-700"
-                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 60vw, 50vw"
-              />
-            </figure>
-          </div>
         </div>
       </article>
     </OverlayPage>
