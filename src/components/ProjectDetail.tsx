@@ -105,7 +105,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
           >
             {/* Close */}
             <button
-              className="absolute top-6 right-6 p-2 text-foreground/60 hover:text-foreground transition-colors"
+              className="absolute top-20 right-6 p-2 text-foreground/60 hover:text-foreground transition-colors"
               onClick={() => setLightboxIndex(null)}
               aria-label="Close"
             >
