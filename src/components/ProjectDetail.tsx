@@ -34,6 +34,8 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                 src={mainImg}
                 alt={`${project.title} — ${project.subtitle} by Matheo Dusong`}
                 className="w-full h-full object-contain transition-all duration-1000"
+                loading="eager"
+                decoding="async"
               />
             </figure>
             <figure className="flex-1 min-w-0 flex items-center">
