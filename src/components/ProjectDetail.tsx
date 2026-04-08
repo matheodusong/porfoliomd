@@ -43,6 +43,8 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                 src={secImg1}
                 alt={`${project.title} detail view 1`}
                 className="w-full h-full object-contain transition-opacity duration-700"
+                loading="eager"
+                decoding="async"
               />
             </figure>
             <figure className="flex-1 min-w-0 flex items-center">
