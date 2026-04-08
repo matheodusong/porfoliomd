@@ -31,7 +31,7 @@ const OverlayPage = ({ isOpen, onClose, children }: OverlayPageProps) => {
         <motion.div
           ref={scrollRef}
           className="fixed inset-0 w-full h-screen z-[1000] overflow-y-auto overlay-scroll font-body"
-          style={{ backgroundColor: "hsl(var(--surface-overlay))" }}
+          style={{ backgroundColor: "hsl(var(--surface-overlay))", willChange: "transform" }}
           initial={{ y: "100%" }}
           animate={{ y: "0%" }}
           exit={{ y: "100%" }}

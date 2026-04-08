@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 interface ProjectStripProps {
   number: number;
@@ -7,9 +7,8 @@ interface ProjectStripProps {
   onClick: () => void;
 }
 
-const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
+const ProjectStrip = memo(({ number, title, image, onClick }: ProjectStripProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const num = String(number).padStart(2, "0");
 
   return (
     <div
@@ -18,15 +17,13 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
         width: isHovered ? "30vw" : "15vw",
         minWidth: isHovered ? "30vw" : "15vw",
         transition: "width 0.8s cubic-bezier(0.16, 1, 0.3, 1), min-width 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+        willChange: "width, min-width",
       }}
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Vignette image — 3:4 aspect ratio, visible on hover */}
-      <div
-        className="absolute inset-0 flex items-center justify-center z-0"
-      >
+      <div className="absolute inset-0 flex items-center justify-center z-0">
         <div
           style={{
             aspectRatio: "3/4",
@@ -36,6 +33,7 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
             transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
             transform: isHovered ? "scale(1)" : "scale(0.95)",
             filter: isHovered ? "blur(0px)" : "blur(6px)",
+            willChange: "transform, filter",
           }}
         >
           <img
@@ -43,11 +41,14 @@ const ProjectStrip = ({ number, title, image, onClick }: ProjectStripProps) => {
             alt={title}
             className="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
     </div>
   );
-};
+});
+
+ProjectStrip.displayName = "ProjectStrip";
 
 export default ProjectStrip;
