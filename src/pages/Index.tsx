@@ -80,7 +80,7 @@ const Index = () => {
 
       {/* Horizontal Carousel */}
       <motion.div
-        className="h-[70vh] lg:h-[60vh] w-screen mt-[20vh] overflow-x-auto overflow-y-hidden carousel-scrollbar cursor-grab active:cursor-grabbing"
+        className="h-[70vh] lg:h-[60vh] w-screen mt-[20vh] pb-6 overflow-x-auto overflow-y-hidden carousel-scrollbar cursor-grab active:cursor-grabbing"
         ref={scrollRef}
         animate={{
           scale: hasOverlay ? 0.95 : 1,
