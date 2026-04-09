@@ -65,6 +65,7 @@ export const projects: ProjectData[] = [
       "Zéphyr is a fan. The stainless steel structure unfolds smoothly and creates a light breeze with a simple motion. Whether you're on the move or just need a quick way to cool down, Zéphyr is a good companion for warm days.",
     materiality: "Stainless steel and PVC-coated ripstop.",
     imageFolder: "zephyr",
+    imageCount: 2,
   },
   {
     slug: "peony",
