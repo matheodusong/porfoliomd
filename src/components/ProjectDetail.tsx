@@ -14,6 +14,7 @@ interface ProjectDetailProps {
 
 const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const count = project?.imageCount ?? 3;
 
   // Reset lightbox when project changes
   useEffect(() => {
@@ -25,20 +26,19 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
     if (lightboxIndex === null) return;
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") setLightboxIndex(null);
-      if (e.key === "ArrowRight") setLightboxIndex((i) => (i !== null ? (i + 1) % 3 : null));
-      if (e.key === "ArrowLeft") setLightboxIndex((i) => (i !== null ? (i + 2) % 3 : null));
+      if (e.key === "ArrowRight") setLightboxIndex((i) => (i !== null ? (i + 1) % count : null));
+      if (e.key === "ArrowLeft") setLightboxIndex((i) => (i !== null ? (i + count - 1) % count : null));
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [lightboxIndex]);
+  }, [lightboxIndex, count]);
 
   if (!project) return null;
 
-  const images = [
-    { src: getProjectImage(project.imageFolder, 1), alt: `${project.title} — ${project.subtitle} by Matheo Dusong` },
-    { src: getProjectImage(project.imageFolder, 2), alt: `${project.title} detail view 1` },
-    { src: getProjectImage(project.imageFolder, 3), alt: `${project.title} detail view 2` },
-  ];
+  const images = Array.from({ length: count }, (_, i) => ({
+    src: getProjectImage(project.imageFolder, i + 1),
+    alt: i === 0 ? `${project.title} — ${project.subtitle} by Matheo Dusong` : `${project.title} detail view ${i}`,
+  }));
 
   return (
     <OverlayPage isOpen={isOpen} onClose={onClose}>
@@ -115,7 +115,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
             {/* Prev */}
             <button
               className="absolute left-4 md:left-8 p-2 text-foreground/40 hover:text-foreground transition-colors"
-              onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 2) % 3); }}
+              onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + count - 1) % count); }}
               aria-label="Previous image"
             >
               <ChevronLeft size={32} />
@@ -137,7 +137,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
             {/* Next */}
             <button
               className="absolute right-4 md:right-8 p-2 text-foreground/40 hover:text-foreground transition-colors"
-              onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % 3); }}
+              onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % count); }}
               aria-label="Next image"
             >
               <ChevronRight size={32} />

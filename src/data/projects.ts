@@ -7,8 +7,10 @@ export interface ProjectData {
   description: string;
   objective?: string;
   materiality: string;
-  /** Folder name under /images/ — images inside must be named image-1.jpeg, image-2.jpeg, image-3.jpeg */
+  /** Folder name under /images/ — images inside must be named image-1.jpeg, image-2.jpeg, etc. */
   imageFolder: string;
+  /** Number of images in the folder (default: 3) */
+  imageCount?: number;
 }
 
 /** Helper: returns the path for a project image by index (1-based). */
