@@ -36,7 +36,6 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
   if (!project) return null;
 
   const images = Array.from({ length: count }, (_, i) => ({
-  const images = Array.from({ length: count }, (_, i) => ({
     src: getProjectImage(project.imageFolder, i + 1),
     alt: i === 0 ? `${project.title} — ${project.subtitle} by Matheo Dusong` : `${project.title} detail view ${i}`,
   }));
