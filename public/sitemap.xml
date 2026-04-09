@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://matheodusong.github.io/matheodusong-portfolio/</loc>
+    <loc>https://matheo.dusong.ch/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/alumine</loc>
+    <loc>https://matheo.dusong.ch/project/alumine</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/rpr</loc>
+    <loc>https://matheo.dusong.ch/project/rpr</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/mille-foil</loc>
+    <loc>https://matheo.dusong.ch/project/mille-foil</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/zephyr</loc>
+    <loc>https://matheo.dusong.ch/project/zephyr</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://matheodusong.github.io/matheodusong-portfolio/project/peony</loc>
+    <loc>https://matheo.dusong.ch/project/peony</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://matheodusong.github.io/matheodusong-portfolio/info</loc>
+    <loc>https://matheo.dusong.ch/info</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://matheodusong.github.io/matheodusong-portfolio/contact</loc>
+    <loc>https://matheo.dusong.ch/contact</loc>
     <priority>0.6</priority>
   </url>
 </urlset>

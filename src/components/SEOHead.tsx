@@ -8,7 +8,7 @@ interface SEOHeadProps {
   image?: string;
 }
 
-const SITE_URL = "https://matheodusong.github.io/matheodusong-portfolio";
+const SITE_URL = "https://matheo.dusong.ch";
 const DEFAULT_TITLE = "Matheo Dusong | Industrial Design";
 const DEFAULT_DESCRIPTION =
   "Portfolio of Matheo Dusong — industrial designer focusing on technical precision, material research, and refined aesthetics.";
