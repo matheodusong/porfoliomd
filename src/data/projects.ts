@@ -104,7 +104,7 @@ export const projects: ProjectData[] = [
     description: "Series of images made with CGI for JB.",
     materiality: "CGI",
     imageFolder: "JB",
-    imageCount?: 2;
+    imageCount: 2,
   },
 ];
 
