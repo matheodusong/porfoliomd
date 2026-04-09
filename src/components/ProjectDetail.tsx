@@ -14,6 +14,7 @@ interface ProjectDetailProps {
 
 const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const count = project?.imageCount ?? 3;
 
   // Reset lightbox when project changes
   useEffect(() => {
@@ -34,7 +35,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
 
   if (!project) return null;
 
-  const count = project.imageCount ?? 3;
+  const images = Array.from({ length: count }, (_, i) => ({
   const images = Array.from({ length: count }, (_, i) => ({
     src: getProjectImage(project.imageFolder, i + 1),
     alt: i === 0 ? `${project.title} — ${project.subtitle} by Matheo Dusong` : `${project.title} detail view ${i}`,
