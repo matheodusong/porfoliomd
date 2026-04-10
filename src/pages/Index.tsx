@@ -78,6 +78,8 @@ const Index = () => {
         onLogoClick={closeAll}
       />
 
+      <h1 className="sr-only">Matheo Dusong — Industrial Design Portfolio</h1>
+
       {/* Horizontal Carousel */}
       <motion.div
         className="h-[70vh] lg:h-[60vh] w-screen mt-[20vh] pb-6 overflow-x-auto overflow-y-hidden carousel-scrollbar cursor-grab active:cursor-grabbing"
