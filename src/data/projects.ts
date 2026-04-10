@@ -15,7 +15,7 @@ export interface ProjectData {
 
 /** Helper: returns the path for a project image by index (1-based). */
 export const getProjectImage = (folder: string, index: number) =>
-  `/images/${folder}/image-${index}.jpeg`;
+  `/images/${folder}/image-${index}.webp`;
 
 export const projects: ProjectData[] = [
   {
