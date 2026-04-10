@@ -75,7 +75,7 @@ export const projects: ProjectData[] = [
     description:
       "A glasse soliflower vase made specially for peonies. Created with a tool made specially for the occasion.",
     objective:
-      "A glasse soliflower vase made specially for peonies. Created with a tool made specially for the occasion.",
+      "A glasse soliflower vase made specially for peonies. Images by Shiny Vallenas.",
     materiality: "Glass.",
     imageFolder: "peony",
   },
