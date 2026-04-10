@@ -38,7 +38,7 @@ const ProjectStrip = memo(({ number, title, image, onClick }: ProjectStripProps)
         >
           <img
             src={image}
-            alt={title}
+            alt={`${title} — industrial design project by Matheo Dusong`}
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
