@@ -69,7 +69,7 @@ const Index = () => {
         onPrefetchInfo={loadInfoOverlay}
       />
 
-      <h1 className="sr-only">Matheo Dusong — Industrial Design Portfolio</h1>
+      <h1 className="sr-only">Matheo Dusong (MD) — Designer industriel suisse et Industrial Designer</h1>
 
       {/* Horizontal Carousel */}
       <div
