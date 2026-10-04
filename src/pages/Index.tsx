@@ -67,9 +67,8 @@ const Index = () => {
         onOpenInfo={openInfo}
         onLogoClick={closeAll}
         onPrefetchInfo={loadInfoOverlay}
+        isHome={location.pathname === "/"}
       />
-
-      <h1 className="sr-only">Matheo Dusong (MD) — Designer industriel suisse et Industrial Designer</h1>
 
       {/* Horizontal Carousel */}
       <div
