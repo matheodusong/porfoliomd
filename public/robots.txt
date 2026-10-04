@@ -1,1 +1,28 @@
-m«ëˆ§½©buªàºg§¶››–'?®†è¶ËqµKæÚ±î¸Ø[é¢Šwâ•ê(º×â•æÛ­æ¤n·š‘éÜ¡×¢ëiºÛ©Š{h–)Ş²‡åzx-†{¦×^r‡^uç(uè§¦ëa…éiv+)•¬­†+&zËè¢›­Šznµø¥y×Ÿjém~ŠìµØ§¢‹­¦ëhºÚnµø¥y×Ÿjém~ŠìµÚ.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://matheo.dusong.ch/sitemap.xml
