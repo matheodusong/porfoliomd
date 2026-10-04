@@ -106,9 +106,26 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
               {project.title}
             </h1>
             <div className="text-secondary-foreground text-sm leading-relaxed space-y-6 mt-6">
-              <p className="my-[10px]">— {objective}</p>
-              <p>— {materiality}</p>
-              {credits && <p>— {credits}</p>}
+              <section aria-labelledby={`project-${project.slug}-about`}>
+                <h2 id={`project-${project.slug}-about`} className="spec-label mb-2">
+                  {lang === "en" ? "About" : "À propos"}
+                </h2>
+                <p>{objective}</p>
+              </section>
+              <section aria-labelledby={`project-${project.slug}-materials`}>
+                <h2 id={`project-${project.slug}-materials`} className="spec-label mb-2">
+                  {lang === "en" ? "Materials & year" : "Matériaux & année"}
+                </h2>
+                <p>{materiality}</p>
+              </section>
+              {credits && (
+                <section aria-labelledby={`project-${project.slug}-credits`}>
+                  <h2 id={`project-${project.slug}-credits`} className="spec-label mb-2">
+                    {lang === "en" ? "Credits" : "Crédits"}
+                  </h2>
+                  <p>{credits}</p>
+                </section>
+              )}
             </div>
           </aside>
         </div>

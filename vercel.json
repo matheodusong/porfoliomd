@@ -1,5 +1,7 @@
 {
   "rewrites": [
+    { "source": "/project/:slug", "destination": "/project/:slug/index.html" },
+    { "source": "/info", "destination": "/info/index.html" },
     { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
 }
