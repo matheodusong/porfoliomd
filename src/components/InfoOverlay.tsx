@@ -17,20 +17,22 @@ const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
     <OverlayPage isOpen={isOpen} onClose={onClose}>
       <SEOHead
         title="Info / Contact"
-        description="Swiss industrial designer shaped by watersports and road cycling, with a fascination for rigid, lightweight materials such as carbon fibre and titanium."
+        description="Matheo Dusong is a Swiss industrial designer based in Lausanne, working across objects, manufacturing processes, 3D and CGI."
         path="/info"
       />
-      <section className="max-w-4xl mx-auto pt-36 md:pt-48 px-6 md:px-10">
+      <section className="max-w-5xl mx-auto pt-28 md:pt-32 px-6 md:px-10 pb-12">
         <p className="spec-label mb-4">{t("profile")}</p>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter mb-12 text-foreground leading-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter mb-8 text-foreground leading-tight">
           <span className="block">{t("swissDesigner")}</span>
         </h1>
-        <p className="max-w-2xl text-base md:text-lg font-light leading-relaxed text-secondary-foreground mb-12">
-          {t("profileBio")}
-        </p>
-        <div className="mb-12">
+        <div className="max-w-3xl text-sm md:text-[15px] font-light leading-[1.55] text-secondary-foreground mb-10 space-y-3">
+          {t("profileBio").split("\n\n").map((paragraph) => (
+            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+          ))}
+        </div>
+        <div className="mb-10">
           <p className="spec-label mb-4">{t("formation")}</p>
-          <ul className="text-xl md:text-2xl lg:text-3xl font-light tracking-tighter text-foreground leading-tight space-y-2">
+          <ul className="text-lg md:text-xl lg:text-2xl font-light tracking-tighter text-foreground leading-tight space-y-2">
             <li>
               <a
                 href={masUrl}

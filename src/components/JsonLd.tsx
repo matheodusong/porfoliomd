@@ -14,13 +14,21 @@ const JsonLd = () => {
     alternateName: ["Mathéo Dusong", "MD", "md"],
     identifier: "MD",
     description:
-      "Swiss industrial designer shaped by watersports and road cycling, with a fascination for rigid, lightweight materials including carbon fibre and titanium, currently completing the ECAL MAS Design for Luxury & Craftsmanship.",
+      "Swiss industrial designer based in Lausanne, working across jewellery, accessories, electronic objects, tools and sports equipment, with 3D and CGI central to his practice.",
     jobTitle: "Industrial Designer",
     url: SITE_URL,
     email: "mailto:matheo.dusong@gmail.com",
     nationality: {
       "@type": "Country",
       name: "Switzerland",
+    },
+    birthPlace: {
+      "@type": "Country",
+      name: "Switzerland",
+    },
+    homeLocation: {
+      "@type": "Place",
+      name: "Lausanne, Switzerland",
     },
     alumniOf: {
       "@type": "CollegeOrUniversity",
@@ -38,13 +46,8 @@ const JsonLd = () => {
       "Material Research",
       "Luxury Design",
       "Craftsmanship",
-      "Carbon Fiber",
-      "Titanium",
-      "Windsurfing",
-      "Pump Foiling",
-      "Wing Foiling",
-      "Road Cycling",
-      "Lightweight Materials",
+      "CGI",
+      "3D Modeling",
     ],
   };
 

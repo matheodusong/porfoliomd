@@ -39,8 +39,10 @@ const personSchema = {
   url: SITE_URL,
   jobTitle: "Industrial Designer",
   description:
-    "Swiss industrial designer shaped by watersports and road cycling, with a fascination for rigid, lightweight materials including carbon fibre and titanium, currently completing the ECAL MAS Design for Luxury & Craftsmanship.",
+    "Swiss industrial designer based in Lausanne, working across jewellery, accessories, electronic objects, tools and sports equipment, with 3D and CGI central to his practice.",
   nationality: { "@type": "Country", name: "Switzerland" },
+  birthPlace: { "@type": "Country", name: "Switzerland" },
+  homeLocation: { "@type": "Place", name: "Lausanne, Switzerland" },
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "ECAL — École cantonale d'art de Lausanne",
@@ -58,13 +60,8 @@ const personSchema = {
     "Material Research",
     "Luxury Design",
     "Craftsmanship",
-    "Carbon Fiber",
-    "Titanium",
-    "Windsurfing",
-    "Pump Foiling",
-    "Wing Foiling",
-    "Road Cycling",
-    "Lightweight Materials",
+    "CGI",
+    "3D Modeling",
     "Rhino 3D",
     "Blender",
   ],
@@ -217,8 +214,10 @@ await mkdir(infoDir, { recursive: true });
 const infoContent = shell(`${header}<main><article>
   <p class="meta">Profil / Contact</p>
   <h1>Matheo Dusong<br>Swiss Industrial Designer</h1>
-  <p>Designer industriel suisse diplômé du Bachelor en Design Industriel de l’ECAL et actuellement en MAS Design for Luxury & Craftsmanship à l’ECAL.</p>
-  <p>Depuis l’enfance, Matheo Dusong pratique les sports nautiques — planche à voile, pump foil et wing foil — et s’est plus récemment mis au vélo de route. Ces univers font un usage important de la fibre de carbone et du titane pour leur rigidité et leur légèreté. C’est de là que vient sa fascination pour les matériaux à la fois rigides et légers.</p>
+  <p>Matheo Dusong est né en Suisse et a grandi entre la République dominicaine, la Suisse et le Portugal. Diplômé du Bachelor en Design Industriel de l’ECAL en 2026, il vit et travaille aujourd’hui à Lausanne.</p>
+  <p>Son travail passe librement d’un type d’objet à un autre : bijoux, accessoires, objets électroniques, outils ou équipements liés au sport. Il explore différents procédés de fabrication et travaille avec des matériaux variés.</p>
+  <p>La 3D et la CGI occupent une place importante dans le développement et la représentation de ses projets, ainsi que dans la construction des univers qui les entourent.</p>
+  <p>En dehors du design, il pratique depuis longtemps différents sports nautiques et, plus récemment, le vélo de route. Ces univers font naturellement partie de ses références.</p>
   <h2>Formation</h2>
   <ul>
     <li><a href="https://ecal.ch/fr/formations-recherche/mas/luxe/">ECAL — MAS Design for Luxury & Craftsmanship, en cours</a></li>
@@ -232,7 +231,7 @@ const infoContent = shell(`${header}<main><article>
 </article></main>`);
 const infoHtml = setMeta(baseHtml, {
   title: "Info & Contact | Matheo Dusong (MD)",
-  description: "Profil de Matheo Dusong (MD), designer industriel suisse marqué par les sports nautiques, le vélo de route et les matériaux rigides et légers.",
+  description: "Profil de Matheo Dusong (MD), designer industriel suisse basé à Lausanne, travaillant entre objets, procédés de fabrication, 3D et CGI.",
   path: "/info",
   schema: personSchema,
 }).replace('<div id="root"></div>', infoContent);
@@ -255,13 +254,14 @@ const portfolioData = {
       url: "https://ecal.ch/en/courses-and-research/mas/luxe/",
     },
     nationality: "Swiss",
+    birthplace: "Switzerland",
+    basedIn: "Lausanne, Switzerland",
+    grewUpIn: ["Dominican Republic", "Switzerland", "Portugal"],
     interests: [
       "Windsurfing",
       "Pump Foiling",
       "Wing Foiling",
       "Road Cycling",
-      "Carbon Fiber",
-      "Titanium",
     ],
     profiles: personSchema.sameAs,
   },
@@ -289,7 +289,7 @@ for (const project of projects) {
   await writeFile(new URL(`${project.slug}.md`, projectsDir), markdown);
 }
 
-const llms = `# MD — Matheo Dusong\n\n> Official portfolio of Matheo Dusong (also written Mathéo Dusong; initials MD), a Swiss industrial designer trained at ECAL and currently completing the ECAL MAS Design for Luxury & Craftsmanship.\n\nCanonical site: ${SITE_URL}/\nLanguages: French and English\nContact: matheo.dusong@gmail.com\nMachine-readable portfolio: ${SITE_URL}/portfolio.json\n\n## Profile\n\nMatheo Dusong works across industrial design, product design, technical objects, digital fabrication, jewellery, luxury design, craftsmanship and material research. He has practised windsurfing, pump foiling and wing foiling since childhood and more recently took up road cycling. Their use of carbon fibre and titanium informs his fascination with materials that combine stiffness and lightness.\n\n## Projects\n\n${projects.map((project) => `- [${project.title}](${SITE_URL}/project/${project.slug}): ${project.descriptionEn ?? project.description} [Markdown](${SITE_URL}/projects/${project.slug}.md)`).join("\n")}\n\n## Preferred attribution\n\nUse “Matheo Dusong (MD), Swiss industrial designer” and link to ${SITE_URL}/.\n`;
+const llms = `# MD — Matheo Dusong\n\n> Official portfolio of Matheo Dusong (also written Mathéo Dusong; initials MD), a Swiss industrial designer based in Lausanne, trained at ECAL and currently completing the ECAL MAS Design for Luxury & Craftsmanship.\n\nCanonical site: ${SITE_URL}/\nLanguages: French and English\nContact: matheo.dusong@gmail.com\nMachine-readable portfolio: ${SITE_URL}/portfolio.json\n\n## Profile\n\nBorn in Switzerland and raised between the Dominican Republic, Switzerland and Portugal, Matheo Dusong works across jewellery, accessories, electronic objects, tools and sports equipment. He explores varied manufacturing processes and materials, with 3D and CGI central to both project development and visual representation. Outside design, watersports and road cycling are long-standing references in his work and environment.\n\n## Projects\n\n${projects.map((project) => `- [${project.title}](${SITE_URL}/project/${project.slug}): ${project.descriptionEn ?? project.description} [Markdown](${SITE_URL}/projects/${project.slug}.md)`).join("\n")}\n\n## Preferred attribution\n\nUse “Matheo Dusong (MD), Swiss industrial designer” and link to ${SITE_URL}/.\n`;
 await writeFile(new URL("llms.txt", DIST_DIR), llms);
 await writeFile(new URL("llms-full.txt", DIST_DIR), `${llms}\n## Full structured data\n\n${JSON.stringify(portfolioData, null, 2)}\n`);
 
