@@ -23,7 +23,6 @@ const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
       <section className="max-w-5xl mx-auto pt-28 md:pt-32 px-6 md:px-10 pb-12">
         <p className="spec-label mb-4">{t("profile")}</p>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter mb-8 text-foreground leading-tight">
-          <span className="block">{t("swissDesigner")}</span>
         </h1>
         <div className="max-w-3xl text-sm md:text-[15px] font-light leading-[1.55] text-secondary-foreground mb-10 space-y-3">
           {t("profileBio").split("\n\n").map((paragraph) => (
