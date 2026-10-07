@@ -17,7 +17,7 @@ const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
     <OverlayPage isOpen={isOpen} onClose={onClose}>
       <SEOHead
         title="Info / Contact"
-        description="Matheo Dusong is a Swiss-based industrial designer currently completing the ECAL MAS Design for Luxury & Craftsmanship."
+        description="Swiss industrial designer shaped by windsurfing and foiling, with a focus on carbon fibre, titanium and high-performance materials."
         path="/info"
       />
       <section className="max-w-4xl mx-auto pt-36 md:pt-48 px-6 md:px-10">
@@ -25,6 +25,9 @@ const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter mb-12 text-foreground leading-tight">
           <span className="block">{t("swissDesigner")}</span>
         </h1>
+        <p className="max-w-2xl text-base md:text-lg font-light leading-relaxed text-secondary-foreground mb-12">
+          {t("profileBio")}
+        </p>
         <div className="mb-12">
           <p className="spec-label mb-4">{t("formation")}</p>
           <ul className="text-xl md:text-2xl lg:text-3xl font-light tracking-tighter text-foreground leading-tight space-y-2">

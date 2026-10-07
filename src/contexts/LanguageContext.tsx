@@ -7,7 +7,11 @@ type Dict = Record<string, { fr: string; en: string }>;
 const dict: Dict = {
   info: { fr: "Info / Contact", en: "Info / Contact" },
   profile: { fr: "Profil", en: "Profile" },
-  swissDesigner: { fr: "— Designer basé en Suisse", en: "— Swiss based designer" },
+  swissDesigner: { fr: "— Designer industriel suisse", en: "— Swiss industrial designer" },
+  profileBio: {
+    fr: "Je pratique les sports nautiques depuis toujours — planche à voile, pump foil et wing foil. Ces disciplines ont façonné une relation directe aux matériaux de haute performance, notamment le carbone et le titane, très présents dans ces environnements exigeants.",
+    en: "I have practised watersports throughout my life — windsurfing, pump foiling and wing foiling. These disciplines have shaped a direct relationship with high-performance materials, particularly carbon fibre and titanium, widely used in these demanding environments.",
+  },
   formation: { fr: "Formation", en: "Education" },
   contact: { fr: "Contact", en: "Contact" },
   eduMas: {
