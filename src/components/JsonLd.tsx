@@ -14,7 +14,7 @@ const JsonLd = () => {
     alternateName: ["Mathéo Dusong", "MD", "md"],
     identifier: "MD",
     description:
-      "Swiss industrial designer and lifelong watersports practitioner, focused on high-performance materials including carbon fibre and titanium, currently completing the ECAL MAS Design for Luxury & Craftsmanship.",
+      "Swiss industrial designer shaped by watersports and road cycling, with a fascination for rigid, lightweight materials including carbon fibre and titanium, currently completing the ECAL MAS Design for Luxury & Craftsmanship.",
     jobTitle: "Industrial Designer",
     url: SITE_URL,
     email: "mailto:matheo.dusong@gmail.com",
@@ -43,6 +43,8 @@ const JsonLd = () => {
       "Windsurfing",
       "Pump Foiling",
       "Wing Foiling",
+      "Road Cycling",
+      "Lightweight Materials",
     ],
   };
 
