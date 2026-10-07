@@ -15,12 +15,12 @@ const dict: Dict = {
   formation: { fr: "Formation", en: "Education" },
   contact: { fr: "Contact", en: "Contact" },
   eduMas: {
-    fr: "— ECAL MAS Design for Luxury & Craftsmanship, Lausanne — en cours",
-    en: "— ECAL MAS Design for Luxury & Craftsmanship, Lausanne — ongoing",
+    fr: "- ECAL MAS Design for Luxury & Craftsmanship, Lausanne - en cours",
+    en: "- ECAL MAS Design for Luxury & Craftsmanship, Lausanne - ongoing",
   },
-  eduIbcp: { fr: "— IBCP, Lisbonne", en: "— IBCP, Lisbon" },
-  eduMeuron: { fr: "— Académie de Meuron, Neuchâtel", en: "— Académie de Meuron, Neuchâtel" },
-  eduEcal: { fr: "— ECAL bachelor design industriel, Lausanne", en: "— ECAL bachelor of industrial design, Lausanne" },
+  eduIbcp: { fr: "- IBCP, Lisbonne", en: "- IBCP, Lisbon" },
+  eduMeuron: { fr: "- Académie de Meuron, Neuchâtel", en: "- Académie de Meuron, Neuchâtel" },
+  eduEcal: { fr: "- ECAL bachelor design industriel, Lausanne", en: "- ECAL bachelor of industrial design, Lausanne" },
 };
 
 interface Ctx {
