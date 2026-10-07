@@ -9,8 +9,8 @@ const dict: Dict = {
   profile: { fr: "Profil", en: "Profile" },
   swissDesigner: { fr: "— Designer industriel suisse", en: "— Swiss industrial designer" },
   profileBio: {
-    fr: "Je pratique les sports nautiques depuis toujours — planche à voile, pump foil et wing foil. Ces disciplines ont façonné une relation directe aux matériaux de haute performance, notamment le carbone et le titane, très présents dans ces environnements exigeants.",
-    en: "I have practised watersports throughout my life — windsurfing, pump foiling and wing foiling. These disciplines have shaped a direct relationship with high-performance materials, particularly carbon fibre and titanium, widely used in these demanding environments.",
+    fr: "Depuis l’enfance, je pratique les sports nautiques — planche à voile, pump foil et wing foil. Plus récemment, je me suis mis au vélo de route. Ces univers font un usage important de la fibre de carbone et du titane pour leur rigidité et leur légèreté. C’est sans doute de là que vient ma fascination pour les matériaux à la fois rigides et légers.",
+    en: "I have practised watersports since childhood — windsurfing, pump foiling and wing foiling — and more recently took up road cycling. These worlds make extensive use of carbon fibre and titanium for their stiffness and lightness. This is probably where my fascination with materials that are both rigid and lightweight comes from.",
   },
   formation: { fr: "Formation", en: "Education" },
   contact: { fr: "Contact", en: "Contact" },

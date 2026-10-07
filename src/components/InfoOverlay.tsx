@@ -17,7 +17,7 @@ const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
     <OverlayPage isOpen={isOpen} onClose={onClose}>
       <SEOHead
         title="Info / Contact"
-        description="Swiss industrial designer shaped by windsurfing and foiling, with a focus on carbon fibre, titanium and high-performance materials."
+        description="Swiss industrial designer shaped by watersports and road cycling, with a fascination for rigid, lightweight materials such as carbon fibre and titanium."
         path="/info"
       />
       <section className="max-w-4xl mx-auto pt-36 md:pt-48 px-6 md:px-10">
