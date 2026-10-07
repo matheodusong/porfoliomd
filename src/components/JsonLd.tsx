@@ -13,7 +13,8 @@ const JsonLd = () => {
     name: "Matheo Dusong",
     alternateName: ["Mathéo Dusong", "MD", "md"],
     identifier: "MD",
-    description: "Swiss industrial designer and ECAL graduate.",
+    description:
+      "Swiss industrial designer and ECAL graduate, currently completing the ECAL MAS Design for Luxury & Craftsmanship.",
     jobTitle: "Industrial Designer",
     url: SITE_URL,
     email: "mailto:matheo.dusong@gmail.com",
@@ -35,6 +36,8 @@ const JsonLd = () => {
       "Product Design",
       "CNC Fabrication",
       "Material Research",
+      "Luxury Design",
+      "Craftsmanship",
     ],
   };
 

@@ -8,12 +8,16 @@ interface InfoOverlayProps {
 }
 
 const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
+  const masUrl = lang === "fr"
+    ? "https://ecal.ch/fr/formations-recherche/mas/luxe/"
+    : "https://ecal.ch/en/courses-and-research/mas/luxe/";
+
   return (
     <OverlayPage isOpen={isOpen} onClose={onClose}>
       <SEOHead
         title="Info / Contact"
-        description="Swiss based designer — get in touch with Matheo Dusong."
+        description="Matheo Dusong is a Swiss-based industrial designer currently completing the ECAL MAS Design for Luxury & Craftsmanship."
         path="/info"
       />
       <section className="max-w-4xl mx-auto pt-36 md:pt-48 px-6 md:px-10">
@@ -24,9 +28,19 @@ const InfoOverlay = ({ isOpen, onClose }: InfoOverlayProps) => {
         <div className="mb-12">
           <p className="spec-label mb-4">{t("formation")}</p>
           <ul className="text-xl md:text-2xl lg:text-3xl font-light tracking-tighter text-foreground leading-tight space-y-2">
-            <li>{t("eduIbcp")}</li>
-            <li>{t("eduMeuron")}</li>
+            <li>
+              <a
+                href={masUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-60 transition-opacity"
+              >
+                {t("eduMas")} ↗
+              </a>
+            </li>
             <li>{t("eduEcal")}</li>
+            <li>{t("eduMeuron")}</li>
+            <li>{t("eduIbcp")}</li>
           </ul>
         </div>
         <div className="flex flex-row items-start justify-between w-full gap-6">

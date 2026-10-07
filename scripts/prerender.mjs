@@ -38,6 +38,8 @@ const personSchema = {
   identifier: "MD",
   url: SITE_URL,
   jobTitle: "Industrial Designer",
+  description:
+    "Swiss industrial designer and ECAL graduate, currently completing the ECAL MAS Design for Luxury & Craftsmanship.",
   nationality: { "@type": "Country", name: "Switzerland" },
   alumniOf: {
     "@type": "CollegeOrUniversity",
@@ -54,6 +56,8 @@ const personSchema = {
     "CNC Fabrication",
     "3D Printing",
     "Material Research",
+    "Luxury Design",
+    "Craftsmanship",
     "Rhino 3D",
     "Blender",
   ],
@@ -206,14 +210,21 @@ await mkdir(infoDir, { recursive: true });
 const infoContent = shell(`${header}<main><article>
   <p class="meta">Profil / Contact</p>
   <h1>Matheo Dusong<br>Swiss Industrial Designer</h1>
-  <p>Designer industriel suisse formé à l’ECAL — École cantonale d’art de Lausanne. Travail autour des objets techniques, de la fabrication numérique et de la recherche matérielle.</p>
+  <p>Designer industriel suisse diplômé du Bachelor en Design Industriel de l’ECAL et actuellement en MAS Design for Luxury & Craftsmanship à l’ECAL. Travail autour des objets techniques, de la fabrication numérique, des matériaux et du savoir-faire.</p>
+  <h2>Formation</h2>
+  <ul>
+    <li><a href="https://ecal.ch/fr/formations-recherche/mas/luxe/">ECAL — MAS Design for Luxury & Craftsmanship, en cours</a></li>
+    <li>ECAL — Bachelor en Design Industriel</li>
+    <li>Académie de Meuron, Neuchâtel</li>
+    <li>IBCP, Lisbonne</li>
+  </ul>
   <h2>Contact</h2>
   <p><a href="mailto:matheo.dusong@gmail.com">matheo.dusong@gmail.com</a></p>
   <p><a href="https://www.instagram.com/matheodusong/">Instagram</a> · <a href="https://www.linkedin.com/in/math%C3%A9o-dusong-060a291b5/">LinkedIn</a></p>
 </article></main>`);
 const infoHtml = setMeta(baseHtml, {
   title: "Info & Contact | Matheo Dusong (MD)",
-  description: "Profil et contact de Matheo Dusong (MD), designer industriel suisse formé à l’ECAL.",
+  description: "Profil et contact de Matheo Dusong (MD), designer industriel suisse actuellement en MAS Design for Luxury & Craftsmanship à l’ECAL.",
   path: "/info",
   schema: personSchema,
 }).replace('<div id="root"></div>', infoContent);
@@ -229,6 +240,12 @@ const portfolioData = {
     role: { fr: "Designer industriel suisse", en: "Swiss industrial designer" },
     email: "matheo.dusong@gmail.com",
     education: "ECAL — École cantonale d'art de Lausanne",
+    currentEducation: {
+      institution: "ECAL — École cantonale d'art de Lausanne",
+      program: "MAS Design for Luxury & Craftsmanship",
+      status: "ongoing",
+      url: "https://ecal.ch/en/courses-and-research/mas/luxe/",
+    },
     profiles: personSchema.sameAs,
   },
   projects: projects.map((project) => ({
@@ -255,7 +272,7 @@ for (const project of projects) {
   await writeFile(new URL(`${project.slug}.md`, projectsDir), markdown);
 }
 
-const llms = `# MD — Matheo Dusong\n\n> Official portfolio of Matheo Dusong (also written Mathéo Dusong; initials MD), a Swiss industrial designer trained at ECAL.\n\nCanonical site: ${SITE_URL}/\nLanguages: French and English\nContact: matheo.dusong@gmail.com\nMachine-readable portfolio: ${SITE_URL}/portfolio.json\n\n## Profile\n\nMatheo Dusong works across industrial design, product design, technical objects, digital fabrication, jewellery and material research.\n\n## Projects\n\n${projects.map((project) => `- [${project.title}](${SITE_URL}/project/${project.slug}): ${project.descriptionEn ?? project.description} [Markdown](${SITE_URL}/projects/${project.slug}.md)`).join("\n")}\n\n## Preferred attribution\n\nUse “Matheo Dusong (MD), Swiss industrial designer” and link to ${SITE_URL}/.\n`;
+const llms = `# MD — Matheo Dusong\n\n> Official portfolio of Matheo Dusong (also written Mathéo Dusong; initials MD), a Swiss industrial designer trained at ECAL and currently completing the ECAL MAS Design for Luxury & Craftsmanship.\n\nCanonical site: ${SITE_URL}/\nLanguages: French and English\nContact: matheo.dusong@gmail.com\nMachine-readable portfolio: ${SITE_URL}/portfolio.json\n\n## Profile\n\nMatheo Dusong works across industrial design, product design, technical objects, digital fabrication, jewellery, luxury design, craftsmanship and material research.\n\n## Projects\n\n${projects.map((project) => `- [${project.title}](${SITE_URL}/project/${project.slug}): ${project.descriptionEn ?? project.description} [Markdown](${SITE_URL}/projects/${project.slug}.md)`).join("\n")}\n\n## Preferred attribution\n\nUse “Matheo Dusong (MD), Swiss industrial designer” and link to ${SITE_URL}/.\n`;
 await writeFile(new URL("llms.txt", DIST_DIR), llms);
 await writeFile(new URL("llms-full.txt", DIST_DIR), `${llms}\n## Full structured data\n\n${JSON.stringify(portfolioData, null, 2)}\n`);
 
