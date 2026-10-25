@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://matheo.dusong.ch/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://matheo.dusong.ch/project/peony</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <image:image><image:loc>https://matheo.dusong.ch/images/peony/image-1.webp</image:loc><image:title>Peony — Matheo Dusong</image:title></image:image>
     <priority>0.8</priority>
   </url>
@@ -58,5 +58,11 @@
     <loc>https://matheo.dusong.ch/info</loc>
     <lastmod>2026-10-04</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matheo.dusong.ch/project/nex-1</loc>
+    <lastmod>2026-10-25</lastmod>
+    <image:image><image:loc>https://matheo.dusong.ch/images/nex-1/image-1.webp</image:loc><image:title>NEX-1 — Matheo Dusong</image:title></image:image>
+    <priority>0.8</priority>
   </url>
 </urlset>

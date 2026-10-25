@@ -14,7 +14,7 @@ export interface ProjectData {
   materialityEn?: string;
   credits?: string;
   creditsEn?: string;
-  /** Folder name under /images/ — images inside must be named image-1.jpeg, image-2.jpeg, etc. */
+  /** Folder name under /images/ — images inside must be named image-1.webp, image-2.webp, etc. */
   imageFolder: string;
   /** Number of images in the folder (default: 3) */
   imageCount?: number;
@@ -31,6 +31,20 @@ export const getProjectThumbnail = (folder: string) =>
   `/images/${folder}/thumbnail.webp`;
 
 export const projects: ProjectData[] = [
+  {
+    slug: "nex-1",
+    number: 9,
+    title: "NEX-1",
+    subtitle: "Ordinateur de bureau",
+    description:
+      "NEX-1 est un ordinateur de bureau conçu pour les télétravailleurs. Grâce à son écran enroulable, il se transforme d’un poste de travail complet en un objet discret lorsqu’il n’est pas utilisé, réduisant ainsi sa présence visuelle dans l’habitat.",
+    materiality: "",
+    subtitleEn: "Desktop computer",
+    descriptionEn:
+      "NEX-1 is a desktop computer designed for remote workers. Its rollable display lets it transform from a complete workstation into a discreet object when not in use, reducing its visual presence in the home.",
+    imageFolder: "nex-1",
+    imageCount: 3,
+  },
   {
     slug: "alumine",
     number: 1,
@@ -114,16 +128,16 @@ export const projects: ProjectData[] = [
     title: "Peony",
     subtitle: "Forme organique",
     description:
-      "Peony est un soliflore conçu comme un coussin pour pivoines, réalisé lors d’un workshop dirigé par Philippe Malouin, en collaboration avec Arthur Németh et Jonas Meynet.",
+      "Peony est un soliflore conçu comme un coussin pour pivoines, réalisé en collaboration avec Arthur Németh et Jonas Meynet.",
     objective:
-      "Peony est un soliflore conçu comme un coussin pour pivoines, réalisé lors d’un workshop dirigé par Philippe Malouin, en collaboration avec Arthur Németh et Jonas Meynet.",
+      "Peony est un soliflore conçu comme un coussin pour pivoines, réalisé en collaboration avec Arthur Németh et Jonas Meynet.",
     materiality:
       "Verre soufflé à la main. 2024.",
     subtitleEn: "Organic form",
     descriptionEn:
-      "Peony is a bud vase conceived as a cushion for peonies, made during a workshop led by Philippe Malouin, in collaboration with Arthur Németh and Jonas Meynet.",
+      "Peony is a bud vase conceived as a cushion for peonies, made in collaboration with Arthur Németh and Jonas Meynet.",
     objectiveEn:
-      "Peony is a bud vase conceived as a cushion for peonies, made during a workshop led by Philippe Malouin, in collaboration with Arthur Németh and Jonas Meynet.",
+      "Peony is a bud vase conceived as a cushion for peonies, made in collaboration with Arthur Németh and Jonas Meynet.",
     materialityEn:
       "Hand-blown glass. 2024.",
     credits: "Images par Shiny Vallenas.",

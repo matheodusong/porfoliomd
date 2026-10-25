@@ -112,12 +112,14 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                 </h2>
                 <p>{objective}</p>
               </section>
+              {materiality && (
               <section aria-labelledby={`project-${project.slug}-materials`}>
                 <h2 id={`project-${project.slug}-materials`} className="spec-label mb-2">
                   {lang === "en" ? "Materials & year" : "Matériaux & année"}
                 </h2>
                 <p>{materiality}</p>
               </section>
+              )}
               {credits && (
                 <section aria-labelledby={`project-${project.slug}-credits`}>
                   <h2 id={`project-${project.slug}-credits`} className="spec-label mb-2">
