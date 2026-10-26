@@ -39,7 +39,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
 
   const subtitle = lang === "en" ? project.subtitleEn ?? project.subtitle : project.subtitle;
   const description = lang === "en" ? project.descriptionEn ?? project.description : project.description;
-  const objective = lang === "en" ? project.objectiveEn ?? project.objective ?? project.description : project.objective ?? project.description;
+  const objective = lang === "en" ? project.objectiveEn ?? project.descriptionEn ?? project.objective ?? project.description : project.objective ?? project.description;
   const materiality = lang === "en" ? project.materialityEn ?? project.materiality : project.materiality;
   const credits = lang === "en" ? project.creditsEn ?? project.credits : project.credits;
 

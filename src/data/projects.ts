@@ -42,6 +42,8 @@ export const projects: ProjectData[] = [
     subtitleEn: "Desktop computer",
     descriptionEn:
       "NEX-1 is a desktop computer designed for remote workers. Its rollable display lets it transform from a complete workstation into a discreet object when not in use, reducing its visual presence in the home.",
+    credits: "Photos par Lee Eggenshwiler.",
+    creditsEn: "Photos by Lee Eggenshwiler.",
     imageFolder: "nex-1",
     imageCount: 3,
   },
